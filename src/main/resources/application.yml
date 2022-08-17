@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:4321/lec-budget-db"
+    username: admin
+    password: admin
+  jpa:
+    open-in-view: false
+  main:
+    banner-mode: off

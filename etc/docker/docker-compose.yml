@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  lec-budget-app:
+    image: "lec-budget/buildpack-image"
+    ports:
+      - "8080:8080"
+    environment:
+      - "SPRING_DATASOURCE_URL=jdbc:postgresql://lec-budget-database:5432/lec-budget-db"
+    depends_on:
+      - lec-budget-database
+  lec-budget-database:
+    image: "postgres:13-alpine"
+    ports:
+      - "4321:5432"
+    volumes:
+      - "lec-budget-db-data:/var/lib/postgresql/data"
+    environment:
+      - "POSTGRES_USER=admin"
+      - "POSTGRES_PASSWORD=admin"
+      - "POSTGRES_DB=lec-budget-db"
+volumes:
+  lec-budget-db-data:
