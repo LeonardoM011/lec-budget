@@ -1,3 +1,8 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
 spring:
   datasource:
     url: "jdbc:postgresql://localhost:4321/lec-budget-db"
@@ -7,3 +12,6 @@ spring:
     open-in-view: false
   main:
     banner-mode: off
+  security:
+    oauth2:
+
